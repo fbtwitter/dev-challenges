@@ -1,0 +1,32 @@
+---
+import { siteConfig } from '../site.config'
+import { SiteMeta } from '../types'
+import { ViewTransitions } from 'astro:transitions'
+
+type Props = SiteMeta
+
+const { description, title } = Astro.props
+
+const titleSeparator = "|"
+const siteTitle = `${title} ${titleSeparator} ${siteConfig.title}`
+---
+
+<meta charset="UTF-8" />
+<meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<title>{siteTitle}</title>
+
+<!-- ViewTransitions -->
+<ViewTransitions/>
+
+{/* Primary Meta Tags */}
+<meta content={siteTitle} name="title"/>
+<meta content={description} name="description"/>
+<meta content={siteConfig.author} name="author"/>
+
+<meta content={Astro.generator} name="generator"/>
+
+<!-- Custom Fonts or CSS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@200..900&display=swap" rel="stylesheet">
