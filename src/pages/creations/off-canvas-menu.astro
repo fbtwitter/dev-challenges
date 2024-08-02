@@ -1,7 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro'
 ---
-<Base meta={{ title: 'Off Canvas Menu' }}>
+<Base meta={{ title: 'Off Canvas Menu Creations' }}>
   <main>
     <div class="offsite-container">
       <nav class="nav">
@@ -124,10 +124,10 @@ import Base from '../../layouts/Base.astro'
 
 <script>
   /* Second add this */
-  const main = document.querySelector('main')
-  const button = document.querySelector('button')
+  const main = document.querySelector('main')!
+  const button = document.querySelector('button')!
 
-  button.addEventListener('click', e => {
+  button.addEventListener('click', _ => {
     // using if else
     // if (main.classList.contains('offsite-is-open')) {
     //   main.classList.remove('offsite-is-open')
