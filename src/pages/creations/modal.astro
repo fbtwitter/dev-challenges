@@ -159,7 +159,7 @@ import Base from '../../layouts/Base.astro'
 		border-color: var(--magenta-600);
 	}
 
-	/* Add this to change the behavior overlay to open and close */
+	/* Add this to change the behavior overlay to hide below the content */
 	.modal-overlay {
 		position: fixed;
 		inset: 0;
@@ -167,6 +167,7 @@ import Base from '../../layouts/Base.astro'
 		z-index: -1;
 	}
 
+	/* Add this to to change the modal above the content */
 	.modal-is-open .modal-overlay {
 		opacity: 1 !important;
 		z-index: 1 !important;
@@ -175,10 +176,17 @@ import Base from '../../layouts/Base.astro'
 
 <script>
 	const modalButton = document.querySelector('.jsModalButton')!
+	const modalCloseButton = document.querySelector('.jsModalClose')!
 	const body = document.querySelector('#app')!
 
+	// modal show
 	modalButton.addEventListener('click', function (e) {
 		console.log('halo')
 		body.classList.add('modal-is-open')
+	})
+
+	// modal close
+	modalCloseButton?.addEventListener('click', (_) => {
+		body.classList.remove('modal-is-open')
 	})
 </script>

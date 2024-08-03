@@ -1,19 +1,22 @@
 ---
 import { siteConfig } from '../site.config'
 import BaseHead from '../components/BaseHead.astro'
-import type {  SiteMeta } from '../types'
+import type { SiteMeta } from '../types'
 
 interface Props {
-  meta: SiteMeta
+	meta: SiteMeta
 }
 
-const { meta: {  description = siteConfig.description, title } } = Astro.props
+const {
+	meta: { description = siteConfig.description, title },
+} = Astro.props
 ---
+
 <html lang={siteConfig.lang}>
-<head>
-  <BaseHead description={description} title={title} />
-</head>
-<body>
-<slot/>
-</body>
+	<head>
+		<BaseHead description={description} title={title} />
+	</head>
+	<body>
+		<slot />
+	</body>
 </html>
