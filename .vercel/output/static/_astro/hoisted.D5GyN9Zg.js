@@ -1,0 +1,1 @@
+import"./ViewTransitions.astro_astro_type_script_index_0_lang.CmkSwYHY.js";const t=document.querySelector(".jsModalButton"),l=document.querySelector(".jsModalClose"),o=document.querySelector("#app");t.addEventListener("click",function(e){console.log("halo"),o.classList.add("modal-is-open")});l?.addEventListener("click",e=>{o.classList.remove("modal-is-open")});

@@ -1,0 +1,55 @@
+{
+	"version": 3,
+	"routes": [
+		{
+			"src": "^/_astro/(.*)$",
+			"headers": {
+				"cache-control": "public, max-age=31536000, immutable"
+			},
+			"continue": true
+		},
+		{
+			"handle": "filesystem"
+		},
+		{
+			"src": "^\\/_image$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/challenges\\/fem\\/qr-code-component\\/README\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/challenges\\/fem\\/qr-code-component\\/README-template\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/challenges\\/fem\\/qr-code-component\\/style-guide\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/challenges\\/fem\\/qr-code-component\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/challenges\\/wordle\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/creations\\/modal\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/creations\\/off-canvas-menu\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/creations\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/$",
+			"dest": "_render"
+		}
+	]
+}
