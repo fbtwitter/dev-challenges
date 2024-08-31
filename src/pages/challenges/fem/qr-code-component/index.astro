@@ -1,28 +1,75 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+---
+import { Image } from "astro:assets";
+import Base from "../../../../layouts/Base.astro";
+import qrImage from "./_images/image-qr-code.png";
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | QR code component</title>
+const headContent = `
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+`;
+---
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+<Base meta={{ title: "QR Code Component" }}>
+	<slot name='custom-head' />
+	<main
+		class='font-outfit h-screen w-screen bg-[var(--var-color-light-gray)] px-4'
+	>
+		<h1 class='sr-only'>Reza - QR Code Component Challenges</h1>
+		<div class='relative m-auto grid h-[inherit] max-w-80 place-items-center'>
+			<article
+				class='rounded-3xl bg-[var(--var-color-white)] p-4 drop-shadow-[var(--var-custom-shadow)]'
+				role='complementary'
+			>
+				<figure class='overflow-hidden rounded-xl'>
+					<Image src={qrImage} alt='QR code linking to Frontend Mentor' />
+				</figure>
+				<div class='flex flex-col gap-4 py-6'>
+					<h2
+						class='text-center text-[1.357rem] font-bold leading-tight text-[var(--var-color-dark-blue)]'
+					>
+						Improve your front-end skills by building projects
+					</h2>
+					<p
+						class='text-center text-base font-normal tracking-wide text-[var(--var-color-grayish-blue)]'
+					>
+						Scan the QR code to visit Frontend Mentor and take your coding
+						skills to the next level
+					</p>
+				</div>
+			</article>
+			<div class='attribution'>
+				<span
+					>Challenge by <a
+						href='https://www.frontendmentor.io?ref=challenge'
+						target='_blank'>Frontend Mentor</a
+					>.
+				</span>
+				<span
+					>Coded by <a href='https://github.com/fbtwitter' target='_blank'
+						>Reza Fauzi Augusdi</a
+					>.</span
+				>
+			</div>
+		</div>
+	</main>
+</Base>
 
-  Improve your front-end skills by building projects
+<style>
+	:root {
+		--var-color-white: hsl(0, 0%, 100%);
+		--var-color-light-gray: hsl(212, 45%, 89%);
+		--var-color-grayish-blue: hsl(220, 15%, 55%);
+		--var-color-dark-blue: hsl(218, 44%, 22%);
+		--var-custom-shadow: 0px 25px 25px 0px rgba(0, 0, 0, 0.0477);
+	}
 
-  Scan the QR code to visit Frontend Mentor and take your coding skills to the next level
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
-</html>
+	.attribution {
+		font-size: 11px;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		@apply absolute bottom-0 py-4 font-mono;
+	}
+	.attribution a {
+		color: hsl(228, 45%, 44%);
+	}
+</style>

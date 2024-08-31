@@ -15,6 +15,7 @@ const {
 <html lang={siteConfig.lang}>
 	<head>
 		<BaseHead description={description} title={title} />
+		<slot name="custom-head" />
 	</head>
 	<body>
 		<slot />
