@@ -9,46 +9,51 @@ const headContent = `
 ---
 
 <Base meta={{ title: "QR Code Component" }}>
-	<slot name='custom-head' />
+	<Fragment slot="custom-head">
+		<link
+			href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+			rel="stylesheet"
+		/>
+	</Fragment>
 	<main
-		class='h-screen w-screen bg-[var(--var-color-light-gray)] px-4 font-outfit'
+		class="h-screen w-screen bg-[var(--var-color-light-gray)] px-4 font-outfit"
 	>
-		<h1 class='sr-only'>Reza - QR Code Component Challenges</h1>
-		<div class='relative m-auto grid h-[inherit] max-w-80 place-items-center'>
+		<h1 class="sr-only">Reza - QR Code Component Challenges</h1>
+		<div class="relative m-auto grid h-[inherit] max-w-80 place-items-center">
 			<article
-				class='rounded-3xl bg-[var(--var-color-white)] p-4 drop-shadow-[var(--var-custom-shadow)]'
-				role='complementary'
+				class="rounded-3xl bg-[var(--var-color-white)] p-4 drop-shadow-[var(--var-custom-shadow)]"
+				role="complementary"
 			>
-				<figure class='overflow-hidden rounded-xl'>
+				<figure class="overflow-hidden rounded-xl">
 					<Image
 						src={qrImage}
-						alt='QR code linking to Frontend Mentor'
+						alt="QR code linking to Frontend Mentor"
 						loading={"eager"}
 					/>
 				</figure>
-				<div class='flex flex-col gap-4 py-6'>
+				<div class="flex flex-col gap-4 py-6">
 					<h2
-						class='text-center text-[1.357rem] font-bold leading-tight text-[var(--var-color-dark-blue)]'
+						class="text-center text-[1.375rem] font-bold leading-tight text-[var(--var-color-dark-blue)]"
 					>
 						Improve your front-end skills by building projects
 					</h2>
 					<p
-						class='text-center text-base font-normal tracking-wide text-[var(--var-color-grayish-blue)]'
+						class="text-center text-base font-normal tracking-wide text-[var(--var-color-grayish-blue)]"
 					>
 						Scan the QR code to visit Frontend Mentor and take your coding
 						skills to the next level
 					</p>
 				</div>
 			</article>
-			<div class='attribution'>
+			<div class="attribution">
 				<span
 					>Challenge by <a
-						href='https://www.frontendmentor.io?ref=challenge'
-						target='_blank'>Frontend Mentor</a
+						href="https://www.frontendmentor.io?ref=challenge"
+						target="_blank">Frontend Mentor</a
 					>.
 				</span>
 				<span
-					>Coded by <a href='https://github.com/fbtwitter' target='_blank'
+					>Coded by <a href="https://github.com/fbtwitter" target="_blank"
 						>Reza Fauzi Augusdi</a
 					>.</span
 				>
