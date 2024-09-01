@@ -11,7 +11,7 @@ const headContent = `
 <Base meta={{ title: "QR Code Component" }}>
 	<slot name='custom-head' />
 	<main
-		class='font-outfit h-screen w-screen bg-[var(--var-color-light-gray)] px-4'
+		class='h-screen w-screen bg-[var(--var-color-light-gray)] px-4 font-outfit'
 	>
 		<h1 class='sr-only'>Reza - QR Code Component Challenges</h1>
 		<div class='relative m-auto grid h-[inherit] max-w-80 place-items-center'>
@@ -67,14 +67,10 @@ const headContent = `
 	}
 
 	.attribution {
-		font-size: 11px;
-		text-align: center;
-		display: flex;
-		flex-direction: column;
-		@apply absolute bottom-0 rounded-full py-4 font-mono;
+		@apply absolute bottom-0 flex flex-col rounded-full py-4 text-center font-mono text-xs;
 	}
 
 	.attribution a {
-		color: hsl(228, 45%, 44%);
+		@apply text-[hsl(228,45%,44%)];
 	}
 </style>
